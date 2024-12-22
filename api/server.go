@@ -49,7 +49,7 @@ func ExpressionHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	if resp.Error != "" {
-		w.WriteHeader(http.StatusBadRequest)
+		w.WriteHeader(http.StatusInternalServerError)
 	}
 
 	enc := json.NewEncoder(w)
